@@ -20,7 +20,7 @@ for name in "${!IMGS[@]}"; do
     convert "assets/img/$name.png" -resize '1920x>' -quality 78 "assets/img/$name.webp"
   fi
   rm "assets/img/$name.png"
-  sed -i "s#$BASE/$file#assets/img/$name.webp#g" index.html
+  sed -i -e "s#$BASE/${file%.png}_min.webp#assets/img/$name.webp#g" -e "s#$BASE/$file#assets/img/$name.webp#g" index.html
 done
 sed -i '/d8j0ntlcm91z4.cloudfront.net" crossorigin/d' index.html
 echo "Done. Note: og:image and JSON-LD image should be absolute URLs on your domain."
