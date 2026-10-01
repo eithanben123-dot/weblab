@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://[הדומיין-שלכם].co.il/sitemap.xml
